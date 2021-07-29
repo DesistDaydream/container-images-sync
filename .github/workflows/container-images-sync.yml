@@ -23,4 +23,5 @@ jobs:
         tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
     - name: images sync
       run: |
+        ls -alh
         ./image-syncer --proc=20 --config=config.yaml --retries=3
