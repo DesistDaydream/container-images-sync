@@ -12,6 +12,9 @@ jobs:
     - name: Cache phpdragon src repos
       # 引用发行版的主要版本
       uses: actions/cache@v1
+      with:
+        path: /home/runner/work/phpdragon/phpdragon-cache
+        key: ${{ runner.os }}-phpdragon-repos-cache
     - name: install image-syncer
       env:
         image_syncer_version: v1.3.0
