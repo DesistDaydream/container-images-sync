@@ -1,0 +1,23 @@
+name: Container Images Sync
+on:
+  # 取消 push 的注释后，向本仓库推送代码即可开始 Gitee 同步
+  push:
+  schedule:
+  # 
+  - cron: '* * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cache phpdragon src repos
+      # 引用发行版的主要版本
+      uses: actions/cache@v1
+    - name: install image-syncer
+      env:
+        image_syncer_version: v1.3.0
+      run: |
+        wget https://github.com/AliyunContainerService/image-syncer/releases/download/${image_syncer_version}/image-syncer-${image_syncer_version}-linux-amd64.tar.gz
+        tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
+    - name: images sync
+      run: |
+        ./image-syncer --proc=20 --config=config.yaml --retries=3

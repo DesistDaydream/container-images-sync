@@ -1,0 +1,7 @@
+auth:
+  registry.hub.docker.com:
+    username: ${{ secrets.DOCKER_USERNAME }}
+    password: ${{ secrets.DOCKER_PASSWORD }}
+images:
+  k8s.gcr.io/metrics-server/metrics-server: lchdzh/metrics-server
+  k8s.gcr.io/ingress-nginx/controller: lchdzh/ingress-nginx-controller
