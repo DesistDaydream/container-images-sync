@@ -33,7 +33,7 @@ jobs:
                 "username": "xxx",
                 "password": "xxxxxxxxx"
             },
-            "registry.hub.docker.com": {
+            "docker.io": {
                 "username": "${DOCKER_USERNAME}",
                 "password": "${DOCKER_PASSWORD}"
             },
