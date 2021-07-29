@@ -1,5 +1,5 @@
 {
-    "k8s.gcr.io/metrics-server/metrics-server": "docker.io/lchdzh/metrics-server",
-    "k8s.gcr.io/kube-state-metrics/kube-state-metrics": "docker.io/lchdzh/kube-state-metrics",
-    "k8s.gcr.io/ingress-nginx/controller": "docker.io/lchdzh/ingress-nginx-controller"
+    "k8s.gcr.io/metrics-server/metrics-server": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/metrics-server",
+    "k8s.gcr.io/kube-state-metrics/kube-state-metrics": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-state-metrics",
+    "k8s.gcr.io/ingress-nginx/controller": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/ingress-nginx-controller"
 }

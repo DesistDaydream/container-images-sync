@@ -21,6 +21,8 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        ALI_USERNAME: ${{ secrets.ALI_USERNAME }}
+        ALI_PASSWORD: ${{ secrets.ALI_PASSWORD }}
       run: |
         cat > auth.json <<EOF
         {        
@@ -29,9 +31,9 @@ jobs:
                 "password": "xxxxxxxxx",
                 "insecure": true
             },
-            "registry.cn-beijing.aliyuncs.com": {
-                "username": "xxx",
-                "password": "xxxxxxxxx"
+            "registry.cn-hangzhou.aliyuncs.com": {
+                "username": "${ALI_USERNAME}",
+                "password": "${ALI_PASSWORD}"
             },
             "docker.io": {
                 "username": "${DOCKER_USERNAME}",
