@@ -17,9 +17,13 @@ jobs:
       run: |
         wget https://github.com/AliyunContainerService/image-syncer/releases/download/${image_syncer_version}/image-syncer-${image_syncer_version}-linux-amd64.tar.gz
         tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
+    - name: config
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: sed -i "s@DOCKER_USERNAME@${DOCKER_USERNAME}@g" auth.json
+      run: sed -i "s@DOCKER_PASSWORD@${DOCKER_PASSWORD}@g" auth.json
+      run: cat config.yaml
     - name: images sync
       run: |
-        sed -i "s@DOCKER_USERNAME@${{ secrets.DOCKER_USERNAME }}@g" auth.json
-        sed -i "s@DOCKER_PASSWORD@${{ secrets.DOCKER_PASSWORD }}@g" auth.json
-        cat config.yaml
         ./image-syncer --proc=20 --auth=auth.json --images=images.json --retries=3
