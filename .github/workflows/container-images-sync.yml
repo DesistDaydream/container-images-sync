@@ -19,5 +19,7 @@ jobs:
         tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
     - name: images sync
       run: |
-        ls -alh
-        ./image-syncer --proc=20 --config=config.yaml --retries=3
+        sed -i "s@DOCKER_USERNAME@${{ secrets.DOCKER_USERNAME }}@g" atuh.json
+        sed -i "s@DOCKER_PASSWORD@${{ secrets.DOCKER_PASSWORD }}@g" atuh.json
+        cat config.yaml
+        ./image-syncer --proc=20 --auth=auth.json --images=images.json --retries=3

@@ -1,0 +1,4 @@
+{
+    "k8s.gcr.io/metrics-server/metrics-server": "docker.io/lchdzh/metrics-server",
+    "k8s.gcr.io/ingress-nginx/controller": "docker.io/lchdzh/ingress-nginx-controller"
+}
