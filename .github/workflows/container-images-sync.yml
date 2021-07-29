@@ -9,8 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
+    - name: Check out repository code
+      uses: actions/checkout@v2
     - name: install image-syncer
       env:
         image_syncer_version: v1.3.0
