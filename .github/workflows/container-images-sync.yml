@@ -4,7 +4,7 @@ on:
   push:
   schedule:
   # 
-  - cron: '* * * * *'
+  - cron: '0 0 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -44,7 +44,6 @@ jobs:
             }
         }
         EOF
-        cat config.yaml
     - name: images sync
       run: |
         ./image-syncer --proc=20 --auth=auth.json --images=images.json --retries=3
