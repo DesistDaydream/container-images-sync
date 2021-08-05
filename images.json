@@ -8,5 +8,6 @@
     "k8s.gcr.io/kube-proxy": "docker.io/lchdzh/kube-proxy",
     "k8s.gcr.io/pause": "docker.io/lchdzh/pause",
     "k8s.gcr.io/etcd": "docker.io/lchdzh/etcd",
-    "k8s.gcr.io/coredns": "docker.io/lchdzh/coredns"
+    "k8s.gcr.io/coredns": "docker.io/lchdzh/coredns",
+    "quay.io/coreos/flannel": "docker.io/lchdzh/flannel"
 }
