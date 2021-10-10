@@ -12,5 +12,6 @@
     "k8s.gcr.io/metrics-server/metrics-server": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/metrics-server",
     "k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/nfs-subdir-external-provisioner",
     "quay.io/coreos/flannel": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/flannel",
-    "quay.io/thanos/thanos": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/thanos"
+    "quay.io/thanos/thanos": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/thanos",
+    "quay.io/kiwigrid/k8s-sidecar:1.12.3": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/k8s-sidecar"
 }
