@@ -48,4 +48,4 @@ jobs:
         EOF
     - name: images sync
       run: |
-        ./image-syncer --proc=5 --auth=auth.json --images=images.json --retries=3
+        ./image-syncer --proc=5 --auth=auth.json --images=images.yaml --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
