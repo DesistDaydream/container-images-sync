@@ -9,10 +9,10 @@
     "k8s.gcr.io/coredns:1.7.0": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/coredns:1.7.0",
     "k8s.gcr.io/ingress-nginx/controller:v0.47.0": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/ingress-nginx-controller:v0.47.0",
     "k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.5.1": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-webhook-certgen:v1.5.1",
-    "k8s.gcr.io/kube-state-metrics/kube-state-metrics": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-state-metrics",
-    "k8s.gcr.io/metrics-server/metrics-server": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/metrics-server",
-    "k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/nfs-subdir-external-provisioner",
+    "k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.2.0": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-state-metrics:v2.2.0",
+    "k8s.gcr.io/metrics-server/metrics-server-amd64:v0.3.6": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/metrics-server-amd64:v0.3.6",
+    "k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/nfs-subdir-external-provisioner:v4.0.2",
     "quay.io/coreos/flannel:v0.12.0-amd64": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/flannel:v0.12.0-amd64",
-    "quay.io/thanos/thanos": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/thanos"
+    "quay.io/thanos/thanos:v0.22.0": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/thanos:v0.22.0"
 }
 
