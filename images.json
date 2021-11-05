@@ -1,4 +1,6 @@
 {
+    "docker.io/bats/bats:v1.4.1":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/bats:v1.4.1",
+    "docker.io/grafana/grafana:8.2.1":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/grafana:8.2.1",
     "docker.io/kiwigrid/k8s-sidecar:1.14.2": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/k8s-sidecar:1.14.2",
     "k8s.gcr.io/kube-apiserver:v1.19.16": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-apiserver:v1.19.16",
     "k8s.gcr.io/kube-controller-manager:v1.19.16": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-controller-manager:v1.19.16",
@@ -13,6 +15,9 @@
     "k8s.gcr.io/metrics-server/metrics-server-amd64:v0.3.6": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/metrics-server-amd64:v0.3.6",
     "k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/nfs-subdir-external-provisioner:v4.0.2",
     "quay.io/coreos/flannel:v0.12.0-amd64": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/flannel:v0.12.0-amd64",
+    "quay.io/prometheus/alertmanager:v0.22.2":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/alertmanager:v0.22.2",
+    "quay.io/prometheus/node-exporter:v1.2.2": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/node-exporter:v1.2.2",
+    "quay.io/prometheus/prometheus:v2.28.1":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/prometheus:v2.28.1",
+    "quay.io/prometheus-operator/prometheus-operator:v0.50.0":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/prometheus-operator:v0.50.0",
     "quay.io/thanos/thanos:v0.22.0": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/thanos:v0.22.0"
 }
-
