@@ -1,5 +1,5 @@
 {
-    "docker.io/kiwigrid/k8s-sidecar:": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/k8s-sidecar",
+    "docker.io/kiwigrid/k8s-sidecar:1.14.2": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/k8s-sidecar:1.14.2",
     "k8s.gcr.io/kube-apiserver:v1.19.16": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-apiserver:v1.19.16",
     "k8s.gcr.io/kube-controller-manager:v1.19.16": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-controller-manager:v1.19.16",
     "k8s.gcr.io/kube-scheduler:v1.19.16": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-scheduler:v1.19.16",
