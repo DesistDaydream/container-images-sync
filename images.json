@@ -1,6 +1,9 @@
 {
+    "docker.io/bats/bats:v1.1.0":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/bats:v1.1.0",
     "docker.io/bats/bats:v1.4.1":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/bats:v1.4.1",
     "docker.io/grafana/grafana:8.2.1":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/grafana:8.2.1",
+    "docker.io/grafana/loki:2.1.0":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/loki:2.1.0",
+    "docker.io/grafana/promtail:2.1.0":"registry.cn-hangzhou.aliyuncs.com/dd_k8s/promtail:2.1.0",
     "docker.io/kiwigrid/k8s-sidecar:1.14.2": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/k8s-sidecar:1.14.2",
     "k8s.gcr.io/kube-apiserver:v1.19.16": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-apiserver:v1.19.16",
     "k8s.gcr.io/kube-controller-manager:v1.19.16": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-controller-manager:v1.19.16",
