@@ -26,11 +26,6 @@ jobs:
       run: |
         cat > auth.json <<EOF
         {        
-            "quay.io": {
-                "username": "xxx",             
-                "password": "xxxxxxxxx",
-                "insecure": true
-            },
             "registry.cn-hangzhou.aliyuncs.com": {
                 "username": "${ALI_USERNAME}",
                 "password": "${ALI_PASSWORD}"
@@ -38,11 +33,6 @@ jobs:
             "docker.io": {
                 "username": "${DOCKER_USERNAME}",
                 "password": "${DOCKER_PASSWORD}"
-            },
-            "quay.io/coreos": {
-                "username": "abc",              
-                "password": "xxxxxxxxx",
-                "insecure": true  
             }
         }
         EOF
