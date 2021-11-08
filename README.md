@@ -31,6 +31,30 @@ gcloud container images list-tags k8s.gcr.io/metrics-server/metrics-server
 ```
 
 
+```json
+{        
+    "quay.io": {
+        "username": "xxx",             
+        "password": "xxxxxxxxx",
+        "insecure": true
+    },
+    "registry.cn-beijing.aliyuncs.com": {
+        "username": "xxx",
+        "password": "xxxxxxxxx"
+    },
+    "registry.hub.docker.com": {
+        "username": "DOCKER_USERNAME",
+        "password": "DOCKER_PASSWORD"
+    },
+    "quay.io/coreos": {
+        "username": "abc",              
+        "password": "xxxxxxxxx",
+        "insecure": true  
+    }
+}
+```
+
+
 
 {
     "docker.io/kiwigrid/k8s-sidecar": "registry.cn-hangzhou.aliyuncs.com/dd_k8s/k8s-sidecar"
