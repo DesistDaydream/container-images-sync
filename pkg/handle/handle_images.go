@@ -1,6 +1,8 @@
 package handle
 
 import (
+	"strings"
+
 	"github.com/google/go-containerregistry/pkg/name"
 	v1 "github.com/google/go-containerregistry/pkg/v1"
 	"github.com/google/go-containerregistry/pkg/v1/remote"
@@ -31,6 +33,12 @@ func handleImages(srcImages, destImages, newRegistry string) (v1.Image, name.Ref
 	// 处理原镜像名称
 	if destImages == "" {
 		imageRepository := srcRef.Context().RepositoryStr()
+		// 有的镜像具有 Namespace，去要去掉
+		slice := strings.SplitN(imageRepository, "/", 2)
+		if len(slice) == 2 {
+			imageRepository = slice[1]
+		}
+
 		imageTag := srcRef.Identifier()
 		newDestImages = newRegistry + "/" + imageRepository + ":" + imageTag
 	} else {
