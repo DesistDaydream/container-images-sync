@@ -1,4 +1,4 @@
-name: Container Images Sync
+name: AliyunContainerService Image Sync
 on:
   # 取消 push 的注释后，向本仓库推送代码即可开始 Gitee 同步
   # push:

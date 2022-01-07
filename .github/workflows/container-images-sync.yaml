@@ -1,0 +1,22 @@
+name: Aliyun Image Sync
+on:
+  # 取消 push 的注释后，向本仓库推送代码即可开始 Gitee 同步
+  # push:
+  # schedule:
+  #   - cron: "0 0 * * 1"
+  workflow_dispatch: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: 登录镜像仓库网站
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: 推送镜像
+        run: |
+          go run cmd/images_sync/main.go -f ./pkg/images.yaml
