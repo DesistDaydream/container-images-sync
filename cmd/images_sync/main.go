@@ -84,5 +84,5 @@ func main() {
 	destOptions := remote.WithAuth(auth)
 
 	// 开始同步镜像
-	handle.Run(*config, destOptions)
+	handle.Run(*config, destOptions, imagesSyncFlags.DestRegistry)
 }

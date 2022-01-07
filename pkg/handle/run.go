@@ -39,7 +39,7 @@ type ImagesTag struct {
 	destination string
 }
 
-func Run(config Config, destOptions remote.Option) {
+func Run(config Config, destOptions remote.Option, newRegistry string) {
 	var wg sync.WaitGroup
 	defer wg.Wait()
 
@@ -57,7 +57,7 @@ func Run(config Config, destOptions remote.Option) {
 		go func(imagesTag ImagesTag) {
 			defer wg.Done()
 			// 处理原镜像与目的镜像
-			srcImg, destRef, err := handleImages(imagesTag.source, imagesTag.destination)
+			srcImg, destRef, err := handleImages(imagesTag.source, imagesTag.destination, newRegistry)
 			if err != nil {
 				logrus.WithFields(logrus.Fields{
 					"source": imagesTag.source,
@@ -71,10 +71,10 @@ func Run(config Config, destOptions remote.Option) {
 				}).Info("成功处理的镜像")
 
 				// 使用 options 中的认证信息，将 img 推送到 ref 中
-				err = remote.Write(destRef, srcImg, destOptions)
-				if err != nil {
-					logrus.Error("镜像推送失败:", err)
-				}
+				// err = remote.Write(destRef, srcImg, destOptions)
+				// if err != nil {
+				// 	logrus.Error("镜像推送失败:", err)
+				// }
 			} else {
 				logrus.Error("处理镜像未知错误")
 			}
