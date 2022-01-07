@@ -1,44 +1,45 @@
 name: Container Images Sync
 on:
   # 取消 push 的注释后，向本仓库推送代码即可开始 Gitee 同步
-  push:
+  # push:
   schedule:
-  # 每周一早晨 8 同步
-  - cron: '0 0 * * 1'
+    # 每周一早晨 8 同步
+    - cron: "0 0 * * 1"
+  workflow_dispatch: {}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository code
-      uses: actions/checkout@v2
-    - name: install image-syncer
-      env:
-        image_syncer_version: v1.3.1
-      run: |
-        wget https://github.com/AliyunContainerService/image-syncer/releases/download/${image_syncer_version}/image-syncer-${image_syncer_version}-linux-amd64.tar.gz
-        tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
-    - name: config
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        ALI_USERNAME: ${{ secrets.ALI_USERNAME }}
-        ALI_PASSWORD: ${{ secrets.ALI_PASSWORD }}
-      run: |
-        cat > auth.json <<EOF
-        {        
-            "registry.cn-hangzhou.aliyuncs.com": {
-                "username": "${ALI_USERNAME}",
-                "password": "${ALI_PASSWORD}"
-            },
-            "docker.io": {
-                "username": "${DOCKER_USERNAME}",
-                "password": "${DOCKER_PASSWORD}"
-            }
-        }
-        EOF
-    - name: images sync
-      run: |
-        ./image-syncer --proc=5 --auth=auth.json --images=images.yaml --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
-    - name: check log
-      run: |
-        ls -al
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: install image-syncer
+        env:
+          image_syncer_version: v1.3.1
+        run: |
+          wget https://github.com/AliyunContainerService/image-syncer/releases/download/${image_syncer_version}/image-syncer-${image_syncer_version}-linux-amd64.tar.gz
+          tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
+      - name: config
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          ALI_USERNAME: ${{ secrets.ALI_USERNAME }}
+          ALI_PASSWORD: ${{ secrets.ALI_PASSWORD }}
+        run: |
+          cat > auth.json <<EOF
+          {
+              "registry.cn-hangzhou.aliyuncs.com": {
+                  "username": "${ALI_USERNAME}",
+                  "password": "${ALI_PASSWORD}"
+              },
+              "docker.io": {
+                  "username": "${DOCKER_USERNAME}",
+                  "password": "${DOCKER_PASSWORD}"
+              }
+          }
+          EOF
+      - name: images sync
+        run: |
+          ./image-syncer --proc=5 --auth=auth.json --images=images.yaml --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
+      - name: check log
+        run: |
+          ls -al
