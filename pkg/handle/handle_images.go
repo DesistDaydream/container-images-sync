@@ -9,11 +9,16 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func handleImages(srcImages, destImages, newRegistry string) (v1.Image, name.Reference, error) {
+type ImagesReference struct {
+	source      string
+	destination string
+}
+
+func HandleImages(imgRef ImagesReference, newRegistry string) (v1.Image, name.Reference, error) {
 	var newDestImages string
 
 	// 获取原镜像
-	srcRef, err := name.ParseReference(srcImages)
+	srcRef, err := name.ParseReference(imgRef.source)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -23,26 +28,13 @@ func handleImages(srcImages, destImages, newRegistry string) (v1.Image, name.Ref
 		return nil, nil, err
 	}
 
-	// fmt.Println(srcRef)
-	// fmt.Println(srcRef.Context().Registry)
-	// fmt.Println(srcRef.Context().Name())
-	// fmt.Println(srcRef.Context().RepositoryStr())
-	// fmt.Println(srcRef.Context().Scheme())
-	// fmt.Println(srcRef.Context().Tag(srcRef.Identifier()))
-
 	// 处理原镜像名称
-	if destImages == "" {
-		imageRepository := srcRef.Context().RepositoryStr()
-		// 有的镜像具有 Namespace，去要去掉
-		slice := strings.SplitN(imageRepository, "/", 2)
-		if len(slice) == 2 {
-			imageRepository = slice[1]
-		}
-
-		imageTag := srcRef.Identifier()
-		newDestImages = newRegistry + "/" + imageRepository + ":" + imageTag
+	if imgRef.destination == "" {
+		newRepository := handleRepository(srcRef)
+		newTag := srcRef.Identifier()
+		newDestImages = newRegistry + "/" + newRepository + ":" + newTag
 	} else {
-		newDestImages = destImages
+		newDestImages = imgRef.destination
 	}
 	logrus.Debug("处理后的待推送镜像为:", newDestImages)
 
@@ -53,4 +45,14 @@ func handleImages(srcImages, destImages, newRegistry string) (v1.Image, name.Ref
 	}
 
 	return srcImg, destRef, nil
+}
+
+func handleRepository(srcRef name.Reference) string {
+	imageRepository := srcRef.Context().RepositoryStr()
+	// 有的镜像具有 Namespace，去要去掉
+	slice := strings.SplitN(imageRepository, "/", 2)
+	if len(slice) == 2 {
+		imageRepository = slice[1]
+	}
+	return imageRepository
 }
