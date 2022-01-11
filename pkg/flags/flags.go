@@ -13,5 +13,5 @@ func (isf *ImagesSyncFlags) AddFlags() {
 	pflag.StringVarP(&isf.SrcUsername, "src-username", "", "", "用户名")
 	pflag.StringVarP(&isf.SrcPassword, "src-password", "", "", "密码")
 	pflag.StringVarP(&isf.File, "file", "f", "./images.yaml", "镜像列表文件")
-	pflag.StringVarP(&isf.DestRegistry, "dest-registry", "", "", "目标仓库")
+	pflag.StringVarP(&isf.DestRegistry, "dest-registry", "", "registry.cn-hangzhou.aliyuncs.com/dd_k8s", "目标仓库")
 }
