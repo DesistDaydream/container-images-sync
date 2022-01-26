@@ -9,7 +9,7 @@ on:
     inputs:
       file:
         description: "指定要使用的镜像同步文件的路径"
-        type: environment
+        type: string
         required: true
 jobs:
   build:
