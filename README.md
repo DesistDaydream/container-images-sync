@@ -4,9 +4,15 @@
 
 ## 手动触发工作流
 ![](/pictures/手动触发工作流.png)
-在这里指定想要同步的镜像的文件路径
+在这里指定想要同步的镜像的文件路径，比如：
+- images_list/ingress-controller/images.yaml
+- images_list/kubernetes/images-v1.19.16.yaml
+- images_list/kubernetes/images-v1.23.3.yaml
+- images_list/logging/images.yaml
+- images_list/monitoring/images.yaml
 
 
+# 其他
 在 google 的 [cloudshell](https://console.cloud.google.com/cloudshell) 可以查看 k8s.gcr.io 镜像的信息，示例命令如下：
 ```bash
 gcloud container images list --repository=k8s.gcr.io/metrics-server
