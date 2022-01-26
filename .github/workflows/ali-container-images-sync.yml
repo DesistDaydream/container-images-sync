@@ -5,7 +5,12 @@ on:
   schedule:
     # 每周一早晨 8 同步
     - cron: "0 0 * * 1"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      file:
+        description: "指定要使用的镜像同步文件的路径"
+        type: environment
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,7 +44,7 @@ jobs:
           EOF
       - name: images sync
         run: |
-          ./image-syncer --proc=5 --auth=auth.json --images=images.yaml --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
+          ./image-syncer --proc=5 --auth=auth.json --images=${{ github.event.inputs.file }} --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
       - name: check log
         run: |
           ls -al
