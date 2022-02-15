@@ -1,7 +1,7 @@
 name: AliyunContainerService Image Sync
 on:
   # 取消 push 的注释后，向本仓库推送代码即可开始 Gitee 同步
-  # push:
+  push:
   schedule:
     # 每周一早晨 8 同步
     - cron: "0 0 * * 1"
@@ -11,6 +11,7 @@ on:
         description: "指定要使用的镜像同步文件的路径"
         type: string
         required: true
+        default: "images_list/kubernetes/images-v1.23.3.yaml"
 jobs:
   build:
     runs-on: ubuntu-latest
