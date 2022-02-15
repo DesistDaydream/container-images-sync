@@ -46,7 +46,7 @@ jobs:
       - name: images sync
         shell: bash
         run: |
-          if ${{ github。event.inputs.file }} != ""; then
+          if ${{ github.event.inputs.file }} != ""; then
             ./image-syncer --proc=5 --auth=auth.json --images=images.yaml --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
           else
             ./image-syncer --proc=5 --auth=auth.json --images=${{ github.event.inputs.file }} --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
