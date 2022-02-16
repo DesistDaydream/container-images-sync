@@ -8,10 +8,20 @@ on:
   workflow_dispatch:
     inputs:
       file:
-        description: "指定要使用的镜像同步文件的路径"
+        description: "要使用的镜像同步文件的路径"
         type: string
         required: true
         default: "images_list/kubernetes/images.yaml"
+      registry:
+        description: "目标仓库的域名"
+        type: string
+        required: true
+        default: "registry.cn-hangzhou.aliyuncs.com"
+      namespace:
+        description: "目标仓库的名称空间"
+        type: string
+        required: true
+        default: "dd_k8s"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -51,7 +61,7 @@ jobs:
           if [ -z ${FILE_PATH} ]; then
             ./image-syncer --proc=5 --auth=auth.json --images=images.yaml --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
           else
-            ./image-syncer --proc=5 --auth=auth.json --images=${{ github.event.inputs.file }} --retries=3 --arch=amd64 --registry='registry.cn-hangzhou.aliyuncs.com' --namespace='dd_k8s'
+            ./image-syncer --proc=5 --auth=auth.json --images=${{ github.event.inputs.file }} --retries=3 --arch=amd64 --registry="${{ github.event.inputs.registry }}" --namespace="${{ github.event.inputs.namespace }}"
           fi
       - name: check log
         run: |
