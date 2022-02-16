@@ -11,7 +11,7 @@ on:
         description: "指定要使用的镜像同步文件的路径"
         type: string
         required: true
-        default: "images_list/kubernetes/images-v1.23.3.yaml"
+        default: "images_list/kubernetes/images.yaml"
 jobs:
   build:
     runs-on: ubuntu-latest
