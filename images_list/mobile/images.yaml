@@ -23,3 +23,5 @@ registry.cn-hangzhou.aliyuncs.com/dd_k8s/prometheus:v2.28.1:
 registry.cn-hangzhou.aliyuncs.com/dd_k8s/prometheus-operator:v0.50.0:
 registry.cn-hangzhou.aliyuncs.com/dd_k8s/prometheus-config-reloader:v0.50.0:
 registry.cn-hangzhou.aliyuncs.com/dd_k8s/thanos:v0.22.0:
+registry.cn-hangzhou.aliyuncs.com/dd_k8s/operator-generic:v1.11.1:
+registry.cn-hangzhou.aliyuncs.com/dd_k8s/cilium:v1.11.1:
