@@ -8,19 +8,3 @@ quay.io/prometheus/prometheus:v2.35.0:
 quay.io/prometheus-operator/prometheus-operator:v0.56.0:
 quay.io/prometheus-operator/prometheus-config-reloader:v0.56.0:
 quay.io/thanos/thanos:v0.25.2:
-
-
-
-
-          image: quay.io/prometheus/node-exporter:v1.3.1
-          image: "busybox:1.31.1"
-          image: "quay.io/kiwigrid/k8s-sidecar:1.15.6"
-          image: "quay.io/kiwigrid/k8s-sidecar:1.15.6"
-          image: "grafana/grafana:8.4.6"
-        image: "lchdzh/kube-state-metrics:v2.4.1"
-          image: "quay.io/prometheus-operator/prometheus-operator:v0.56.0"
-  image: "quay.io/prometheus/alertmanager:v0.24.0"
-  image: "registry.aliyuncs.com/dd_k8s/prometheus:v2.28.1"
-      image: "bats/bats:v1.4.1"
-          image: registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-webhook-certgen:v1.0
-          image: registry.cn-hangzhou.aliyuncs.com/dd_k8s/kube-webhook-certgen:v1.0
