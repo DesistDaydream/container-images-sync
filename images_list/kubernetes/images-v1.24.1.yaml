@@ -5,3 +5,9 @@ k8s.gcr.io/kube-proxy:v1.24.1:
 k8s.gcr.io/pause:3.6:
 k8s.gcr.io/etcd:3.5.1-0:
 k8s.gcr.io/coredns/coredns:v1.8.6:
+ghcr.io/kube-vip/kube-vip:v0.4.4:
+k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.2.0:
+k8s.gcr.io/metrics-server-amd64:v0.3.6:
+k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2:
+quay.io/cilium/operator-generic:v1.11.1: registry.cn-hangzhou.aliyuncs.com/dd_k8s/cilium-operator-generic:v1.11.1
+quay.io/cilium/cilium:v1.11.1:
