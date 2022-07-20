@@ -1,4 +1,4 @@
 docker.io/jettech/kube-webhook-certgen:v1.5.1:
-k8s.gcr.io/ingress-nginx/controller:v1.1.1: registry.cn-hangzhou.aliyuncs.com/dd_k8s/ingress-nginx-controller:v1.1.1
-k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1:
+registry.k8s.io/ingress-nginx/controller:v1.2.1: registry.cn-hangzhou.aliyuncs.com/dd_k8s/ingress-nginx-controller
+registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.1.1:
 k8s.gcr.io/defaultbackend-amd64:1.5:
