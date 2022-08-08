@@ -2,8 +2,8 @@ quay.io/prometheus/node-exporter:v1.3.1:
 busybox:1.31.1:
 quay.io/kiwigrid/k8s-sidecar:1.19.2:
 grafana/grafana:9.0.5:
-registry.aliyuncs.com/dd_k8s/kube-state-metrics:v2.5.0:
-registry.aliyuncs.com/dd_k8s/prometheus-operator:v0.58.0:
+registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.5.0:
+quay.io/prometheus-operator/prometheus-operator:v0.58.0:
 quay.io/prometheus/prometheus:v2.37.0:
 bats/bats:v1.4.1:
-registry.aliyuncs.com/dd_k8s/kube-webhook-certgen:v1.2.0:
+k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.2.0:
