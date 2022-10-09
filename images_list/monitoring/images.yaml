@@ -1,11 +1,12 @@
 quay.io/prometheus/node-exporter:v1.3.1:
 quay.io/kiwigrid/k8s-sidecar:1.19.2:
-grafana/grafana:9.0.5:
-registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.5.0:
-quay.io/prometheus-operator/prometheus-operator:v0.58.0:
+grafana/grafana:9.1.6:
+registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.6.0:
+quay.io/prometheus-operator/prometheus-operator:v0.59.2:
 quay.io/prometheus/alertmanager:v0.24.0:
-quay.io/prometheus/prometheus:v2.37.0:
+quay.io/prometheus/prometheus:v2.39.0:
 bats/bats:v1.4.1:
-k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.2.0:
+k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.3.0:
+
 # 下面这个是无法通过 helm template 获取到的镜像
-quay.io/prometheus-operator/prometheus-config-reloader:v0.58.0:
+quay.io/prometheus-operator/prometheus-config-reloader:v0.59.2:
