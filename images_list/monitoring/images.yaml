@@ -1,13 +1,20 @@
-quay.io/prometheus/node-exporter:v1.5.0:
-busybox:1.31.1:
-quay.io/kiwigrid/k8s-sidecar:1.21.0:
-grafana/grafana:9.3.1:
-registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.7.0:
-quay.io/prometheus-operator/prometheus-operator:v0.61.1:
-quay.io/prometheus/alertmanager:v0.25.0:
-quay.io/prometheus/prometheus:v2.40.5:
-bats/bats:v1.4.1:
-k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.3.0:
+# quay.io/prometheus/node-exporter:v1.5.0:
+# busybox:1.31.1:
+# quay.io/kiwigrid/k8s-sidecar:1.21.0:
+# grafana/grafana:9.3.1:
+# registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.7.0:
+# quay.io/prometheus-operator/prometheus-operator:v0.61.1:
+# quay.io/prometheus/alertmanager:v0.25.0:
+# quay.io/prometheus/prometheus:v2.40.5:
+# bats/bats:v1.4.1:
+# k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.3.0:
 
-# 下面这个是无法通过 helm template 获取到的镜像，通常与 prometheus-operator 版本一致
-quay.io/prometheus-operator/prometheus-config-reloader:v0.61.1:
+# # 下面这个是无法通过 helm template 获取到的镜像，通常与 prometheus-operator 版本一致
+# quay.io/prometheus-operator/prometheus-config-reloader:v0.61.1:
+
+grafana/grafana:11.3.2:
+nginx:1.27:
+desistdaydream/a2w:0.2.1:
+prom/prometheus:v2.55.1:
+prom/alertmanager:v0.27.0:
+prom/node-exporter:v1.6.1:

@@ -2,9 +2,6 @@ name: AliyunContainerService Image Sync With One Image
 on:
   # 取消 push 的注释后，向本仓库推送代码即可开始 Gitee 同步
   # push:
-  schedule:
-    # 每周一早晨 8 同步
-    - cron: "0 0 * * 1"
   workflow_dispatch:
     inputs:
       image_name:
