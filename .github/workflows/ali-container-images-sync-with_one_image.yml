@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
       - name: install image-syncer
         env:
-          image_syncer_version: v1.3.1
+          image_syncer_version: v1.4.1
         run: |
           wget https://github.com/AliyunContainerService/image-syncer/releases/download/${image_syncer_version}/image-syncer-${image_syncer_version}-linux-amd64.tar.gz
           tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
